@@ -1,0 +1,59 @@
+" Shows mode
+set showmode
+
+" Enable surround plugin
+set surround
+
+" Macros
+nmap ;; :action Macro.addNull<CR> 
+nmap q<Tab> :action Macro.doubleTab<CR> 
+
+
+" Copy also from VIM to clipboard
+set clipboard=unnamed
+
+" Scroll screen with the cursor
+noremap <C-j> gj<C-e>
+noremap <C-k> gk<C-y>
+
+" always show 10 lines above cursor or below when j k 
+:set scrolloff=10
+
+
+set ignorecase
+
+
+" jj jk kk quit insert mode while fortgetting about insert mode
+" inoremap jj <Esc>
+" inoremap jk <Esc>
+" inoremap kk <Esc>
+
+" Disable macros recording 
+map q <Nop>
+
+nnoremap <Tab> i<Tab>
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
+" Prevent to yank deleted text
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+nnoremap D "_dd
+nnoremap D "_dw
+nnoremap <Del> "_x
+
+
+let g:yankring_n_keys = 'Y'
+
+nnoremap <leader>d ""d
+nnoremap <leader>D ""D
+vnoremap <leader>d ""d
+vnoremap <leader>d ""dd
+vnoremap <leader>d ""dw
+nnoremap <leader>d ""dd
+nnoremap <leader>d ""dw
+nnoremap <leader><Del> ""x
